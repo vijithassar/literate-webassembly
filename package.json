@@ -1,0 +1,31 @@
+{
+  "name": "literate-webassembly",
+  "version": "0.0.1",
+  "description": "artisanal handmade Web Assembly arithmetic",
+  "main": "add.wasm",
+  "scripts": {
+    "pretest": "npm run assemble",
+    "test": "node --require esm test.js",
+    "literate": "./lit.sh --input add.wat.md",
+    "preassemble": "npm run literate",
+    "assemble": "wa assemble --out add.wasm add.wat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijithassar/literate-webassembly.git"
+  },
+  "keywords": [
+    "WebAssembly",
+    "JavaScript",
+    "s-expressions"
+  ],
+  "author": "Vijith Assar",
+  "bugs": {
+    "url": "https://github.com/vijithassar/literate-webassembly/issues"
+  },
+  "homepage": "https://github.com/vijithassar/literate-webassembly#readme",
+  "dependencies": {
+    "esm": "^3.0.84",
+    "webassembly": "^0.11.0"
+  }
+}
